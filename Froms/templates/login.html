@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Home </title>
+</head>
+<body>
+    {% include 'nav.html' %}
+
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <form  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Name: </label>
+        <input type="text" name="name" value="">
+        <br><br>
+
+        <label>E-mail:</label>
+        <input type="email" name="email">
+        <br><br>
+        <br><br>
+        <input type="file" name="fileupload" value="fileupload" id="fileupload">
+        <br>
+        <br><br>
+        <input type="submit">
+
+    </form>
+
+   <p> <a href="{% url 'Prof' %}"> <button>See All Profiles</button> </a> </p>
+
+    </div>
+</body>
+</html>
